@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block title %}Update Task {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="border p-3">
+    <h4>Deelete</h4>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="alert alert-danger">
+            <p>Sure delete?</p>
+        </div>
+        <a class="btn btn-secondary btn-sm" href="{% url 'url-index' %}">Cancel</a>
+        <input class="btn btn-danger btn-sm" type="submit" name="Confirm" value="Ok">
+    </form>
+</div>
+{% endblock %}

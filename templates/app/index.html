@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% block title %}Index Page{% endblock %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="border p-3 shadow">
+
+    {% for todo in todos %}
+    <div class="border bg-muted p-3 mb-3" >
+        <p> <small>{{ todo.created_date }}</small></p>
+        <div class="row">
+            <div class="col-md-8">
+            </span></i>{{ todo.id }}.{{ todo.title }}</p>
+            </span></i>{{ todo.content }}</p>
+                {% if todo.complete == True %}
+                <p><span class="btn btn-success btn-sm"><i class="far fa-check-circle"></i>
+                </span></i>{{ todo.id }}.{{ todo.title }}</p>
+                </span></i>{{ todo.content }}</p>
+                {% else %}
+                <p style="background-color: lightcoral">{{ todo.title }}</p>
+                {% endif %}
+            </div>
+
+            <div class="col-md-6">
+                <a class="btn btn-success btn-sm mx-1" href="{% url 'url-context' todo.id %}">Open</a>
+                <a class="btn btn-info btn-sm mx-1"    href="{% url 'url-update' todo.id %}">Edit</a>
+                <a class="btn btn-danger btn-sm mx-1"  href="{% url 'url-delete' todo.id %}">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}
+
+{% block content2 %}
+<div class="border p-3 shadow">
+    <div class="border bg-muted p-3 mb-3" >
+        <div class="row">
+            <div class="col-md-6">
+                <button class="button1 " type="button">
+                    <a  class="btn btn-info btn-sm mx-1" href="{% url 'url-create' %}">Create Todo</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

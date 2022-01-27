@@ -1,0 +1,49 @@
+<div class="border p-3 shadow">
+    <h4>State</h4>
+    <hr>
+    <div class="border mb-3 p-2">
+        <h3>Total note</h3>
+        <h4 class="text-center">{{ count_todos }}</h4>
+    </div>
+    <div class="border mb-3 p-2">
+        <h3>Completed</h3>
+        <h4 class="text-center">{{ count_completed_todo }}</h4>
+    </div>
+    <div class="border mb-3 p-2">
+        <h3>Uncompleted</h3>
+        <h4 class="text-center">{{ uncompleted }}</h4>
+    </div>
+</div>
+<style>
+    .button1{
+                background-color: mediumseagreen;
+                border: none;
+                padding: 15px 30px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 15px;
+                margin: 4px 2px;
+                cursor: pointer;
+                }
+    .a1 {
+                background-color: mediumseagreen;
+                border: none;
+                text-align: center;
+                font-size: 15px;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+                }
+        </style>
+<div class="border p-3 shadow">
+    <div class="border bg-muted p-3 mb-3" >
+        <div class="row">
+            <div class="col-md-6">
+                <button class="button1 " type="button">
+                    <a  class="a1 btn btn-info btn-sm mx-1" href="{% url 'url-create' %}">CREATE TODO</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
